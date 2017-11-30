@@ -3,31 +3,31 @@ source 'https://supermarket.chef.io'
 
 
 cookbook 'java'
-cookbook 'conda', github: "hopshadoop/conda-chef", branch: "master"
-cookbook 'kagent', github: "hopshadoop/kagent-chef", branch: "master"
-cookbook 'hops', github: "hopshadoop/hops-hadoop-chef", branch: "master"
-cookbook 'ndb', github: "hopshadoop/ndb-chef", branch: "master"
-cookbook 'hadoop_spark', github: "hopshadoop/spark-chef", branch: "master"
-cookbook 'flink', github: "hopshadoop/flink-chef", branch: "master"
-cookbook 'zeppelin', github: "hopshadoop/zeppelin-chef", branch: "master"
-cookbook 'livy', github: "hopshadoop/livy-chef", branch: "master"
-cookbook 'drelephant', github: "hopshadoop/dr-elephant-chef", branch: "master"
-cookbook 'tensorflow', github: "hopshadoop/tensorflow-chef", branch: "master"
+cookbook 'conda', github: "hopsworksjenkins/conda-chef", branch: "test_320"
+cookbook 'kagent', github: "hopsworksjenkins/kagent-chef", branch: "test_320"
+cookbook 'hops', github: "hopsworksjenkins/hops-hadoop-chef", branch: "test_320"
+cookbook 'ndb', github: "hopsworksjenkins/ndb-chef", branch: "test_320"
+cookbook 'hadoop_spark', github: "hopsworksjenkins/spark-chef", branch: "test_320"
+cookbook 'flink', github: "hopsworksjenkins/flink-chef", branch: "test_320"
+cookbook 'zeppelin', github: "hopsworksjenkins/zeppelin-chef", branch: "test_320"
+cookbook 'livy', github: "hopsworksjenkins/livy-chef", branch: "test_320"
+cookbook 'drelephant', github: "hopsworksjenkins/dr-elephant-chef", branch: "test_320"
+cookbook 'tensorflow', github: "hopsworksjenkins/tensorflow-chef", branch: "test_320"
 
-cookbook 'epipe', github: "hopshadoop/epipe-chef", branch: "master"
-cookbook 'dela', github: "hopshadoop/dela-chef", branch: "master"
+cookbook 'epipe', github: "hopsworksjenkins/epipe-chef", branch: "test_320"
+cookbook 'dela', github: "hopsworksjenkins/dela-chef", branch: "test_320"
 
-cookbook 'kzookeeper', github: "hopshadoop/kzookeeper", branch: "master"
-cookbook 'kkafka', github: "hopshadoop/kafka-cookbook", branch: "master"
-cookbook 'elastic', github: "hopshadoop/elasticsearch-chef", branch: "master"
+cookbook 'kzookeeper', github: "hopsworksjenkins/kzookeeper", branch: "test_320"
+cookbook 'kkafka', github: "hopsworksjenkins/kafka-cookbook", branch: "test_320"
+cookbook 'elastic', github: "hopsworksjenkins/elasticsearch-chef", branch: "test_320"
 
-cookbook 'hopslog', github: "hopshadoop/hopslog-chef", branch: "master"
-cookbook 'hopsmonitor', github: "hopshadoop/hopsmonitor-chef", branch: "master"
-cookbook 'glassfish', github: "hopshadoop/chef-glassfish", branch: "master"
+cookbook 'hopslog', github: "hopsworksjenkins/hopslog-chef", branch: "test_320"
+cookbook 'hopsmonitor', github: "hopsworksjenkins/hopsmonitor-chef", branch: "test_320"
+cookbook 'glassfish', github: "hopsworksjenkins/chef-glassfish", branch: "test_320"
 
-cookbook 'ulimit', github: "hopshadoop/chef-ulimit", branch: "master"
+cookbook 'ulimit', github: "hopsworksjenkins/chef-ulimit", branch: "test_320"
 
-cookbook 'hive2', github: "hopshadoop/hive-chef", branch: "master"
+cookbook 'hive2', github: "hopsworksjenkins/hive-chef", branch: "test_320"
 
 cookbook 'graphite', '~> 1.0.4'
 cookbook 'simple-logstash', '~> 0.2.4'

@@ -1928,3 +1928,7 @@ attribute "hopsworks/requests_verify",
           :description => "Whether to verify http(s) requests in hops-util-py",
           :type => 'string'
 
+attribute "hopsworks/provenance",
+          :description => "MIN provenance - community edition. FULL provenance - enterprise",
+          :type => 'string'
+

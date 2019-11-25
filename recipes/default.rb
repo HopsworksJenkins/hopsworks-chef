@@ -21,7 +21,7 @@ hopsworks_db = "hopsworks"
 realmname = "kthfsrealm"
 
 begin
-  elastic_ips = node['elastic']['default']['private_ips'].join(",")
+  elastic_ips = all_elastic_ips_str()
 rescue
   elastic_ips = ""
   Chef::Log.warn "could not find the elastic server ip for HopsWorks!"
@@ -119,7 +119,7 @@ rescue
 end
 
 begin
-  kibana_ip = private_recipe_ip("hopslog","default")
+  kibana_ip = public_recipe_ip("hopslog","default")
 rescue
   kibana_ip = node['hostname']
   Chef::Log.warn "could not find the logstash server ip!"

@@ -119,7 +119,7 @@ rescue
 end
 
 begin
-  kibana_ip = public_recipe_ip("hopslog","default")
+  kibana_ip = private_recipe_ip("hopslog","default")
 rescue
   kibana_ip = node['hostname']
   Chef::Log.warn "could not find the logstash server ip!"

@@ -320,6 +320,7 @@ CREATE TABLE `executions` (
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `feature_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
   `feature_store_id` int(11) NOT NULL,
   `hdfs_user_id` int(11) NOT NULL,
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -337,6 +338,7 @@ CREATE TABLE `feature_group` (
   `corr_method` VARCHAR(50) NOT NULL DEFAULT 'pearson',
   PRIMARY KEY (`id`),
   KEY `feature_store_id` (`feature_store_id`),
+  KEY `name_key` (`name`),
   KEY `hdfs_user_id` (`hdfs_user_id`),
   KEY `creator` (`creator`),
   KEY `on_demand_feature_group_fk` (`on_demand_feature_group_id`),
@@ -1516,6 +1518,7 @@ CREATE TABLE `topic_acls` (
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `training_dataset` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
   `feature_store_id` int(11) NOT NULL,
   `hdfs_user_id` int(11) NOT NULL,
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1528,6 +1531,7 @@ CREATE TABLE `training_dataset` (
   `training_dataset_type`   INT(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `feature_store_id` (`feature_store_id`),
+  KEY `name_key` (`name`),
   KEY `hdfs_user_id` (`hdfs_user_id`),
   KEY `creator` (`creator`),
   KEY `hopsfs_training_dataset_fk` (`hopsfs_training_dataset_id`),
@@ -1825,7 +1829,6 @@ CREATE TABLE IF NOT EXISTS `on_demand_feature_group` (
   `query`                   VARCHAR(11000)  NOT NULL,
   `jdbc_connector_id`       INT(11)         NOT NULL,
   `description`             VARCHAR(1000)   NULL,
-  `name`                    VARCHAR(1000)   NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `on_demand_fg_jdbc_fk` FOREIGN KEY (`jdbc_connector_id`) REFERENCES `hopsworks`.`feature_store_jdbc_connector` (`id`)
     ON DELETE CASCADE
@@ -1883,7 +1886,6 @@ CREATE TABLE IF NOT EXISTS `hopsfs_training_dataset` (
 CREATE TABLE IF NOT EXISTS `external_training_dataset` (
   `id`                                INT(11)         NOT NULL AUTO_INCREMENT,
   `s3_connector_id`                   INT(11)         NOT NULL,
-  `name`                              VARCHAR(256)    NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `external_td_s3_connector_fk` FOREIGN KEY (`s3_connector_id`) REFERENCES `hopsworks`
   .`feature_store_s3_connector` (`id`)

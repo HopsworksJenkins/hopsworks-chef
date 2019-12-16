@@ -398,4 +398,5 @@ default['hopsworks']['requests_verify'] = "true"
 #
 # Provenance type can be set to MIN/FULL
 default['hopsworks']['provenance']                            = "MIN"
-
+#define how big each archive round is - how many indices get cleaned
+default['hopsworks']['provenance']['archive']['batch_size']   = "10"

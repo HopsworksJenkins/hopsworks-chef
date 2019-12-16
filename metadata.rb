@@ -1932,7 +1932,7 @@ attribute "hopsworks/provenance",
           :description => "MIN provenance - community edition. FULL provenance - enterprise",
           :type => 'string'
 
-attribute "hopsworks/provenance/archive_batch_size",
+attribute "hopsworks/provenance/archive/batch_size",
           :description => "Provenance cleaning size per round. Number of cleaned indices(per project)",
           :type => 'string'
 

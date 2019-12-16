@@ -1934,4 +1934,4 @@ attribute "hopsworks/provenance",
 
 attribute "hopsworks/provenance/archive/batch_size",
           :description => "Provenance cleaning size per round. Number of cleaned indices(per project)",
-          :type => 'string'x
+          :type => 'string'

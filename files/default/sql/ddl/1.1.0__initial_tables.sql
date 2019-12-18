@@ -320,7 +320,7 @@ CREATE TABLE `executions` (
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `feature_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(63) NOT NULL,
   `feature_store_id` int(11) NOT NULL,
   `hdfs_user_id` int(11) NOT NULL,
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1518,7 +1518,7 @@ CREATE TABLE `topic_acls` (
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `training_dataset` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(63) NOT NULL,
   `feature_store_id` int(11) NOT NULL,
   `hdfs_user_id` int(11) NOT NULL,
   `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,

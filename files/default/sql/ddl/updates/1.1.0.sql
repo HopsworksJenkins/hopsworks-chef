@@ -279,7 +279,7 @@ ALTER TABLE `hopsworks`.`project_topics`
 ALTER TABLE `hopsworks`.`executions` ADD COLUMN `args` VARCHAR(10000) NOT NULL DEFAULT '' AFTER `hdfs_user`;
 
 ALTER TABLE `hopsworks`.`feature_group` 
-    ADD COLUMN `name` VARCHAR(255) AFTER `id`,
+    ADD COLUMN `name` VARCHAR(63) AFTER `id`,
     ADD INDEX `name_key` (`name`);
 
 -- Add all the names from on_demand feature groups
@@ -298,7 +298,7 @@ SET `f`.`name` = REVERSE(SUBSTR(REVERSE(`m`.`TBL_NAME`), 1+LOCATE('_', REVERSE(`
 
 
 ALTER TABLE `hopsworks`.`training_dataset` 
-    ADD COLUMN `name` VARCHAR(255) AFTER `id`,
+    ADD COLUMN `name` VARCHAR(63) AFTER `id`,
     ADD INDEX `name_key` (`name`);
 
 UPDATE `hopsworks`.`training_dataset` `t`

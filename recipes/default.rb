@@ -1088,6 +1088,13 @@ hopsworks_grants "restart_glassfish" do
   action :reload_systemd
 end
 
+# Register Glassfish with Consul
+consul_service "Registering Glassfish with Consul" do
+  service_definition "consul/glassfish-consul.hcl.erb"
+  reload_consul false
+  action :register
+end
+
 template "#{domains_dir}/#{domain_name}/bin/letsencrypt.sh" do
   source "letsencrypt.sh.erb"
   owner node['glassfish']['user']

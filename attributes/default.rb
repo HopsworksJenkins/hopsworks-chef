@@ -1,4 +1,5 @@
 # coding: utf-8
+#jenkins
 include_attribute "conda"
 include_attribute "kagent"
 include_attribute "ndb"

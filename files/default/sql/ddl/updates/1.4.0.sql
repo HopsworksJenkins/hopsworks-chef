@@ -52,3 +52,21 @@ ALTER TABLE `hopsworks`.`feature_store_s3_connector` ADD COLUMN `server_encrypti
 ALTER TABLE `hopsworks`.`training_dataset_split` ADD UNIQUE KEY `dataset_id_split_name` (`training_dataset_id`, `name`);
 
 ALTER TABLE `hopsworks`.`remote_user` ADD COLUMN `status` varchar(45) COLLATE latin1_general_cs NOT NULL DEFAULT '0';
+
+DROP TABLE IF EXISTS `hopsworks`.`featurestore_statistic`;
+
+CREATE TABLE `feature_store_statistic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `commit_time` VARCHAR(20) COLLATE latin1_general_cs NOT NULL,
+  `inode_pid` BIGINT(20) NOT NULL,
+  `inode_name` VARCHAR(255) COLLATE latin1_general_cs NOT NULL,
+  `partition_id` BIGINT(20) NOT NULL,
+  `feature_group_id` INT(11),
+  `training_dataset_id`INT(11),
+  PRIMARY KEY (`id`),
+  KEY `feature_group_id` (`feature_group_id`),
+  KEY `training_dataset_id` (`training_dataset_id`),
+  CONSTRAINT `fg_fk` FOREIGN KEY (`feature_group_id`) REFERENCES `feature_group` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `td_fk` FOREIGN KEY (`training_dataset_id`) REFERENCES `training_dataset` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `inode_fk` FOREIGN KEY (`inode_pid`,`inode_name`,`partition_id`) REFERENCES `hops`.`hdfs_inodes` (`parent_id`,`name`,`partition_id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;

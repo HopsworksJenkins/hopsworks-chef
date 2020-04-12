@@ -756,9 +756,15 @@ end
 node.override['glassfish']['asadmin']['timeout'] = 400
 
 if node['install']['enterprise']['install'].casecmp? "true"
-  node.override['hopsworks']['ear_url'] = "#{node['install']['enterprise']['download_url']}/hopsworks/#{node['hopsworks']['version']}/hopsworks-ear#{node['install']['kubernetes'].casecmp("true") == 0 ? "-kube" : ""}.ear"
-  node.override['hopsworks']['war_url'] = "#{node['install']['enterprise']['download_url']}/hopsworks/#{node['hopsworks']['version']}/hopsworks-web.war"
-  node.override['hopsworks']['ca_url'] = "#{node['install']['enterprise']['download_url']}/hopsworks/#{node['hopsworks']['version']}/hopsworks-ca.war"  
+  if node.override['hopsworks']['ear_url'].starts_with?("#{node['install']['enterprise']['download_url']}/hopsworks")
+    node.override['hopsworks']['ear_url'] = "#{node['install']['enterprise']['download_url']}/hopsworks/#{node['hopsworks']['version']}/hopsworks-ear#{node['install']['kubernetes'].casecmp("true") == 0 ? "-kube" : ""}.ear"
+  end
+  if node.override['hopsworks']['war_url'].starts_with?("#{node['install']['enterprise']['download_url']}/hopsworks")
+    node.override['hopsworks']['war_url'] = "#{node['install']['enterprise']['download_url']}/hopsworks/#{node['hopsworks']['version']}/hopsworks-web.war"
+  end
+  if node.override['hopsworks']['ca_url'].starts_with?("#{node['install']['enterprise']['download_url']}/hopsworks")
+    node.override['hopsworks']['ca_url'] = "#{node['install']['enterprise']['download_url']}/hopsworks/#{node['hopsworks']['version']}/hopsworks-ca.war"
+  end
 end
 
 glassfish_deployable "hopsworks-ear" do

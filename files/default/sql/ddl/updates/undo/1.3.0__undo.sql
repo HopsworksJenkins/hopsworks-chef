@@ -24,4 +24,4 @@ ALTER TABLE `hopsworks`.`conda_commands` CHANGE `docker_image` `proj` varchar(25
 ALTER TABLE `hopsworks`.`jupyter_project` CHANGE `cid` `pid` bigint(20) NOT NULL;
 ALTER TABLE `hopsworks`.`tensorboard` CHANGE `cid` `pid` bigint(20) NOT NULL;
 ALTER TABLE `hopsworks`.`tensorboard` CHANGE `cid` `local_pid` bigint(20) NOT NULL;
-
+ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN `error_message`;

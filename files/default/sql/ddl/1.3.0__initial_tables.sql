@@ -174,6 +174,7 @@ CREATE TABLE `conda_commands` (
   `environment_yml` varchar(10000) COLLATE latin1_general_cs DEFAULT NULL,
   `install_jupyter` tinyint(1) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
+  `error_message` VARCHAR(10000) COLLATE latin1_general_cs DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `project_id` (`project_id`),
   CONSTRAINT `FK_284_520` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,

@@ -3,3 +3,6 @@ REPLACE INTO `hopsworks`.`variables` (`id`, `value`) VALUES ("anaconda_dir", "<%
 DELETE FROM `hopsworks`.`variables` WHERE `id`='docker_mounts';
 DELETE FROM `hopsworks`.`variables` WHERE `id`='docker_registry_name';
 DELETE FROM `hopsworks`.`variables` WHERE `id`='docker_registry_port';
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("provided_python_lib_names", "");
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("cuda_dir", "");
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("cuda_version", "");

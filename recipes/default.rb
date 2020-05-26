@@ -1067,8 +1067,6 @@ directory "/usr/local/share/jupyter/nbextensions/witwidget"  do
   recursive true
 end
 
-include_recipe "tensorflow::serving"
-
 link "#{node['kagent']['certs_dir']}/cacerts.jks" do
   owner node['glassfish']['user']
   group node['glassfish']['group']

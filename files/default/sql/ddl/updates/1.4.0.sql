@@ -21,3 +21,7 @@ UPDATE `hopsworks`.`jupyter_settings` `j`
 JOIN `hopsworks`.`project` `p`
 ON `j`.`project_id` = `p`.`id`
 SET `j`.`base_dir` = CONCAT('/Projects/',`p`.`projectname`,'/Jupyter');
+
+ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN machine_type;
+ALTER TABLE `hopsworks`.`python_dep` DROP COLUMN machine_type;
+ALTER TABLE `hopsworks`.`hosts` DROP COLUMN conda_enabled;

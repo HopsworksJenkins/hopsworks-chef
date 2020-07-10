@@ -45,3 +45,7 @@ ALTER TABLE `hopsworks`.`project` ADD COLUMN `docker_image` varchar(255) COLLATE
 ALTER TABLE `hopsworks`.`project` DROP COLUMN `conda_env`;
 
 ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN `docker_image`;
+ALTER TABLE `hopsworks`.`dataset` ADD COLUMN `permission` VARCHAR(45) NOT NULL DEFAULT 'READ_ONLY';
+ALTER TABLE `hopsworks`.`dataset_shared_with` ADD COLUMN `permission` VARCHAR(45) NOT NULL DEFAULT 'READ_ONLY';
+
+ALTER TABLE `hopsworks`.`activity` CHANGE COLUMN `activity` `activity` VARCHAR(255) COLLATE latin1_general_cs NOT NULL;

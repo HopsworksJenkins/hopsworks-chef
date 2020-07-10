@@ -40,3 +40,8 @@ DROP TABLE `hopsworks`.`online_feature_group`;
 ALTER TABLE `hopsworks`.`cached_feature_group` ADD COLUMN `default_storage` TINYINT DEFAULT 0;
 
 DROP TABLE IF EXISTS `hopsworks`.`tf_lib_mapping`;
+
+ALTER TABLE `hopsworks`.`dataset` ADD COLUMN `permission` VARCHAR(45) NOT NULL DEFAULT 'READ_ONLY';
+ALTER TABLE `hopsworks`.`dataset_shared_with` ADD COLUMN `permission` VARCHAR(45) NOT NULL DEFAULT 'READ_ONLY';
+
+ALTER TABLE `hopsworks`.`activity` CHANGE COLUMN `activity` `activity` VARCHAR(255) COLLATE latin1_general_cs NOT NULL;

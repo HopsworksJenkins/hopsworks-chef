@@ -61,3 +61,4 @@ ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `server_encrypt
 
 ALTER TABLE `hopsworks`.`training_dataset_split` DROP INDEX `dataset_id_split_name`;
 ALTER TABLE `hopsworks`.`remote_user` DROP COLUMN `status`;
+

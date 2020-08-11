@@ -45,3 +45,5 @@ ALTER TABLE `hopsworks`.`project` ADD COLUMN `docker_image` varchar(255) COLLATE
 ALTER TABLE `hopsworks`.`project` DROP COLUMN `conda_env`;
 
 ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN `docker_image`;
+
+ALTER TABLE `hopsworks`.`remote_user` ADD COLUMN `status` varchar(45) COLLATE latin1_general_cs NOT NULL DEFAULT '0';

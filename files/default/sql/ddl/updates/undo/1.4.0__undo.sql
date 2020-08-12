@@ -62,3 +62,11 @@ ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `server_encrypt
 ALTER TABLE `hopsworks`.`training_dataset_split` DROP INDEX `dataset_id_split_name`;
 ALTER TABLE `hopsworks`.`remote_user` DROP COLUMN `status`;
 
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` ADD COLUMN `access_key` VARCHAR(1000) COLLATE latin1_general_cs
+ DEFAULT NULL;
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` ADD COLUMN `secret_key` VARCHAR(1000) COLLATE latin1_general_cs
+ DEFAULT NULL;
+
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` MODIFY `name` VARCHAR(1000) COLLATE latin1_general_cs  NOT NULL;
+
+ALTER TABLE `hopsworks`.`secrets` MODIFY `secret_name` VARCHAR(125) COLLATE latin1_general_cs  NOT NULL;

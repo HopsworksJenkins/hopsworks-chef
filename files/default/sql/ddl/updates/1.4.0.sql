@@ -59,3 +59,10 @@ ALTER TABLE `hopsworks`.`dataset` ADD COLUMN `permission` VARCHAR(45) NOT NULL D
 ALTER TABLE `hopsworks`.`dataset_shared_with` ADD COLUMN `permission` VARCHAR(45) NOT NULL DEFAULT 'READ_ONLY';
 
 ALTER TABLE `hopsworks`.`activity` CHANGE COLUMN `activity` `activity` VARCHAR(255) COLLATE latin1_general_cs NOT NULL;
+
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `access_key`;
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `secret_key`;
+
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` MODIFY `name` VARCHAR(150) COLLATE latin1_general_cs  NOT NULL;
+
+ALTER TABLE `hopsworks`.`secrets` MODIFY `secret_name` VARCHAR(200) COLLATE latin1_general_cs  NOT NULL;

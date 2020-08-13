@@ -1561,7 +1561,10 @@ CREATE TABLE IF NOT EXISTS `training_dataset_split` (
   `percentage` float NOT NULL,
   PRIMARY KEY (`id`),
   KEY `training_dataset_id` (`training_dataset_id`),
-  CONSTRAINT `training_dataset_fk` FOREIGN KEY (`training_dataset_id`) REFERENCES `training_dataset` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  UNIQUE KEY `dataset_id_split_name` (`training_dataset_id`, `name`),
+  CONSTRAINT `training_dataset_fk` FOREIGN KEY (`training_dataset_id`) REFERENCES `training_dataset` (`id`) ON DELETE
+   CASCADE ON UPDATE NO ACTION
+
 ) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1737,7 +1740,7 @@ CREATE TABLE `variables` (
 
 CREATE TABLE IF NOT EXISTS `secrets` (
        `uid` INT NOT NULL,
-       `secret_name` VARCHAR(125) NOT NULL,
+       `secret_name` VARCHAR(200) NOT NULL,
        `secret` VARBINARY(10000) NOT NULL,
        `added_on` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
        `visibility` TINYINT NOT NULL,
@@ -1789,13 +1792,14 @@ CREATE TABLE IF NOT EXISTS `feature_store_jdbc_connector` (
   COLLATE = latin1_general_cs;
 
 CREATE TABLE IF NOT EXISTS `feature_store_s3_connector` (
-  `id`                      INT(11)         NOT NULL AUTO_INCREMENT,
-  `feature_store_id`        INT(11)         NOT NULL,
-  `access_key`              VARCHAR(1000)   NULL,
-  `secret_key`              VARCHAR(1000)   NULL,
-  `bucket`                  VARCHAR(5000)   NOT NULL,
-  `description`             VARCHAR(1000)   NULL,
-  `name`                    VARCHAR(1000)   NOT NULL,
+  `id`                                  INT(11)         NOT NULL AUTO_INCREMENT,
+  `feature_store_id`                    INT(11)         NOT NULL,
+  `bucket`                              VARCHAR(5000)   NOT NULL,
+  `description`                         VARCHAR(1000)   NULL,
+  `name`                                VARCHAR(150)    NOT NULL,
+  `server_encryption_algorithm`         INT(11)         NULL,
+  `server_encryption_key`               VARCHAR(1000)   NULL,
+
   PRIMARY KEY (`id`),
   CONSTRAINT `s3_connector_featurestore_fk` FOREIGN KEY (`feature_store_id`) REFERENCES `hopsworks`.`feature_store` (`id`)
     ON DELETE CASCADE

@@ -45,3 +45,15 @@ ALTER TABLE `hopsworks`.`project` ADD COLUMN `docker_image` varchar(255) COLLATE
 ALTER TABLE `hopsworks`.`project` DROP COLUMN `conda_env`;
 
 ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN `docker_image`;
+
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` ADD COLUMN `server_encryption_algorithm` INT(11) DEFAULT NULL ;
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` ADD COLUMN `server_encryption_key` VARCHAR(1000) DEFAULT NULL;
+
+ALTER TABLE `hopsworks`.`training_dataset_split` ADD UNIQUE KEY `dataset_id_split_name` (`training_dataset_id`, `name`);
+
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `access_key`;
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `secret_key`;
+
+ALTER TABLE `hopsworks`.`feature_store_s3_connector` MODIFY `name` VARCHAR(150) COLLATE latin1_general_cs  NOT NULL;
+
+ALTER TABLE `hopsworks`.`secrets` MODIFY `secret_name` VARCHAR(200) COLLATE latin1_general_cs  NOT NULL;

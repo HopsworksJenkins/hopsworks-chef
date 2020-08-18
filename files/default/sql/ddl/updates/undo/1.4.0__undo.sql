@@ -61,3 +61,6 @@ ALTER TABLE `hopsworks`.`feature_store_s3_connector` DROP COLUMN `server_encrypt
 
 ALTER TABLE `hopsworks`.`training_dataset_split` DROP INDEX `dataset_id_split_name`;
 ALTER TABLE `hopsworks`.`remote_user` DROP COLUMN `status`;
+
+ALTER TABLE `hopsworks`.`conda_commands` CHANGE `environment_yml` `environment_yml` VARCHAR(6000) COLLATE latin1_general_cs DEFAULT NULL;
+ALTER TABLE `hopsworks`.`conda_commands` CHANGE `error_message` `error_message` VARCHAR(6000) COLLATE latin1_general_cs DEFAULT NULL;

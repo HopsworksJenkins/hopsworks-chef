@@ -525,6 +525,7 @@ glassfish_conf = {
   'configs.config.server-config.network-config.protocols.protocol.https-internal.ssl.ssl3-tls-ciphers' => node['glassfish']['ciphersuite'],
   # Set correct thread-priority for the executor services - required during updates
   'resources.managed-executor-service.concurrent\/hopsExecutorService.thread-priority' => 10,
+  'resources.managed-executor-service.concurrent\/condaExecutorService.thread-priority' => 9,
   'resources.managed-thread-factory.concurrent\/hopsThreadFactory.thread-priority' => 10,
   # Enable Single Sign on
   'configs.config.server-config.http-service.virtual-server.server.sso-enabled' => true,

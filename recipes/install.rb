@@ -287,6 +287,21 @@ node.override = {
             'description' => 'Hopsworks Executor Service'
           }
         },
+        'managed_executor_services' => {
+            'concurrent/condaExecutorService' => {
+                'threadpriority' => 9,
+                'corepoolsize' => 30,
+                'maximumpoolsize' => 400,
+                'taskqueuecapacity' => 20000,
+                'description' => 'Hopsworks Conda Executor Service'
+            }
+        },
+        'managed_scheduled_executor_services' => {
+            'concurrent/condaScheduledExecutorService' => {
+                'corepoolsize' => 10,
+                'description' => 'Hopsworks Conda Executor Service'
+            }
+        },
         'jdbc_connection_pools' => {
           'hopsworksPool' => {
             'config' => {

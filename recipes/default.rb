@@ -868,7 +868,7 @@ if node['install']['enterprise']['install'].casecmp? "true" and exists_local("cl
   end
   unless unmanaged
     ear_name = (node['install']['kubernetes'].casecmp?("true") and node['install']['managed_kubernetes'].casecmp?("true")) ? "hopsworks-ear-cloud-kube.ear" : "hopsworks-ear-cloud.ear"
-    node.override['hopsworks']['ear_url'] = "#{node['hopsworks']['download_url']}/#{ear_name}"
+    #node.override['hopsworks']['ear_url'] = "#{node['hopsworks']['download_url']}/#{ear_name}"
   end
 end
 

@@ -84,3 +84,13 @@ ALTER TABLE `hopsworks`.`on_demand_feature` DROP KEY `training_dataset_id`;
 ALTER TABLE `hopsworks`.`on_demand_feature` DROP COLUMN `training_dataset_id`;
 
 ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `query` TINYINT(1) NOT NULL DEFAULT '0';
+CREATE TABLE `cloud_role_mapping` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `project_id` int(11) NOT NULL,
+  `project_role` varchar(32) NOT NULL,
+  `cloud_role` varchar(2048) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index3` (`project_id`,`cloud_role`),
+  KEY `fk_cloud_role_mapping_1_idx` (`project_id`),
+  CONSTRAINT `fk_cloud_role_mapping_1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;

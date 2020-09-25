@@ -37,3 +37,4 @@ RENAME TABLE `hopsworks`.`on_demand_feature` TO `hopsworks`.`feature_store_featu
 ALTER TABLE `hopsworks`.`feature_store_feature` ADD COLUMN `training_dataset_id` int(11) NULL;
 
 ALTER TABLE `hopsworks`.`training_dataset` DROP COLUMN `query`;
+DROP TABLE IF EXISTS `cloud_role_mapping`; 

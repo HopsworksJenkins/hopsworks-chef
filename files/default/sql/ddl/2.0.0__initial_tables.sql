@@ -1991,3 +1991,14 @@ CREATE TABLE `remote_group_project_mapping` (
   KEY `fk_remote_group_project_mapping_1_idx` (`project`),
   CONSTRAINT `fk_remote_group_project_mapping_1` FOREIGN KEY (`project`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+
+CREATE TABLE `cloud_role_mapping` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `project_id` int(11) NOT NULL,
+  `project_role` varchar(32) NOT NULL,
+  `cloud_role` varchar(2048) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index3` (`project_id`,`cloud_role`),
+  KEY `fk_cloud_role_mapping_1_idx` (`project_id`),
+  CONSTRAINT `fk_cloud_role_mapping_1` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;

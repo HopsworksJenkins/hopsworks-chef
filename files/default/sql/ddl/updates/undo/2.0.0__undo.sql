@@ -45,3 +45,5 @@ ALTER TABLE `hopsworks`.`cached_feature_group` DROP COLUMN `timetravel_format`;
 ALTER TABLE `hopsworks`.`training_dataset_join` DROP COLUMN `feature_group_commit_id`;
 
 ALTER TABLE `hopsworks`.`python_dep` ADD COLUMN `base_env` VARCHAR(45) COLLATE latin1_general_cs;
+
+DROP TABLE IF EXISTS `cloud_role_mapping`; 

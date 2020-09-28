@@ -18,3 +18,13 @@ ALTER TABLE `hopsworks`.`feature_group` ADD COLUMN `cluster_analysis_enabled` TI
 ALTER TABLE `hopsworks`.`feature_group` ADD COLUMN`num_clusters` int(11) NOT NULL DEFAULT '5';
 ALTER TABLE `hopsworks`.`feature_group` ADD COLUMN `num_bins` INT(11) NOT NULL DEFAULT '20';
 ALTER TABLE `hopsworks`.`feature_group` ADD COLUMN `corr_method` VARCHAR(50) NOT NULL DEFAULT 'pearson';
+
+DROP TABLE IF EXISTS `training_dataset_join`;
+DROP TABLE IF EXISTS `training_dataset_join_condition`;
+DROP TABLE IF EXISTS `training_dataset_feature`;
+
+RENAME TABLE `hopsworks`.`on_demand_feature` TO `hopsworks`.`feature_store_feature`;
+
+ALTER TABLE `hopsworks`.`feature_store_feature` ADD COLUMN `training_dataset_id` int(11) NULL;
+
+ALTER TABLE `hopsworks`.`training_dataset` DROP COLUMN `query`;

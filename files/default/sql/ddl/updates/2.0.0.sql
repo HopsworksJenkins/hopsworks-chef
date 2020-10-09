@@ -208,7 +208,8 @@ CALL DROP_FOREIGN_KEY_IF_EXISTS('feature_store_feature', 'on_demand_feature_grou
 CALL CREATE_FOREIGN_KEY_IF_NOT_EXISTS('feature_store_feature', 'on_demand_feature_group_id', 'on_demand_feature_group_fk1', 'on_demand_feature_group', 'id')$$
 
 DELIMITER ;
-CREATE TABLE `cloud_role_mapping` (
+
+CREATE TABLE `hopsworks`.`cloud_role_mapping` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
   `project_role` varchar(32) NOT NULL,

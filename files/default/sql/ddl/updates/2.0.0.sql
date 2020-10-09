@@ -85,6 +85,7 @@ ALTER TABLE `hopsworks`.`on_demand_feature` DROP COLUMN `training_dataset_id`;
 
 ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `query` TINYINT(1) NOT NULL DEFAULT '0';
 
+<<<<<<< HEAD
 /*
 The following changes are related to Migration to NDB8
 The following changes are implemented using procedures 
@@ -186,6 +187,9 @@ CALL CREATE_FOREIGN_KEY_IF_NOT_EXISTS('feature_store_feature', 'on_demand_featur
 
 DELIMITER ;
 CREATE TABLE `cloud_role_mapping` (
+=======
+CREATE TABLE `hopsworks`.`cloud_role_mapping` (
+>>>>>>> add db name
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
   `project_role` varchar(32) NOT NULL,

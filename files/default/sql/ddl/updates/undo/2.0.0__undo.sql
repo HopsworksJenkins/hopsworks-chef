@@ -44,3 +44,4 @@ ALTER TABLE `hopsworks`.`cached_feature_group` DROP COLUMN `timetravel_format`;
 
 ALTER TABLE `hopsworks`.`training_dataset_join` DROP COLUMN `feature_group_commit_id`;
 DROP TABLE IF EXISTS `cloud_role_mapping`; 
+DROP TABLE IF EXISTS `hopsworks`.`cloud_role_mapping`; 

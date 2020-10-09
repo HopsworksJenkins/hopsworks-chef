@@ -84,7 +84,8 @@ ALTER TABLE `hopsworks`.`on_demand_feature` DROP KEY `training_dataset_id`;
 ALTER TABLE `hopsworks`.`on_demand_feature` DROP COLUMN `training_dataset_id`;
 
 ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `query` TINYINT(1) NOT NULL DEFAULT '0';
-CREATE TABLE `cloud_role_mapping` (
+
+CREATE TABLE `hopsworks`.`cloud_role_mapping` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL,
   `project_role` varchar(32) NOT NULL,

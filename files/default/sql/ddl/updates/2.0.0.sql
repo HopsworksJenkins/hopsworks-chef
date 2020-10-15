@@ -84,3 +84,5 @@ ALTER TABLE `hopsworks`.`on_demand_feature` DROP KEY `training_dataset_id`;
 ALTER TABLE `hopsworks`.`on_demand_feature` DROP COLUMN `training_dataset_id`;
 
 ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `query` TINYINT(1) NOT NULL DEFAULT '0';
+
+ALTER TABLE `hopsworks`.`cached_feature_group` DROP COLUMN `default_storage`;

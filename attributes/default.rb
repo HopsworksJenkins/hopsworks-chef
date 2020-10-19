@@ -78,9 +78,14 @@ default['hopsworks']['cauth_version']            = "otp-auth-0.4.0.jar"
 default['hopsworks']['cauth_url']                = "#{node['download_url']}/#{node['hopsworks']['cauth_version']}"
 
 default['hopsworks']['download_url']             = "#{node['install']['enterprise']['install'].casecmp?("true") ? node['install']['enterprise']['download_url'] : node['download_url']}/hopsworks/#{node['hopsworks']['version']}"
-default['hopsworks']['war_url']                  = "#{node['hopsworks']['download_url']}/hopsworks-web.war"
-default['hopsworks']['ca_url']                   = "#{node['hopsworks']['download_url']}/hopsworks-ca.war"
-default['hopsworks']['ear_url']                  = "#{node['hopsworks']['download_url']}/hopsworks-ear#{node['install']['kubernetes'].casecmp?("true") ? "-kube" : ""}.ear"
+#default['hopsworks']['war_url']                  = "#{node['hopsworks']['download_url']}/hopsworks-web.war"
+#default['hopsworks']['ca_url']                   = "#{node['hopsworks']['download_url']}/hopsworks-ca.war"
+#default['hopsworks']['ear_url']                  = "#{node['hopsworks']['download_url']}/hopsworks-ear#{node['install']['kubernetes'].casecmp?("true") ? "-kube" : ""}.ear"
+
+#This will be fixed before the merge
+default['hopsworks']['war_url']                  = "https://nexus.hops.works/repository/dev/salman/hopsworks/#{node['hopsworks']['version']}/hopsworks-web.war"
+default['hopsworks']['ca_url']                   = "https://nexus.hops.works/repository/dev/salman/hopsworks/#{node['hopsworks']['version']}/hopsworks-ca.war"
+default['hopsworks']['ear_url']                  = "https://nexus.hops.works/repository/dev/salman/hopsworks/#{node['hopsworks']['version']}/hopsworks-ear#{node['install']['kubernetes'].casecmp?("true") ? "-kube" : ""}.ear"
 
 default['hopsworks']['logsize']                  = "200000000"
 
@@ -106,7 +111,7 @@ default['hopsworks']['spark_ui_logs_offset'] = "512000"
 #Log level of REST API
 default['hopsworks']['hopsworks_rest_log_level'] = "PROD"
 
-default['hopsworks']['mysql_connector_url']         = "#{node['download_url']}/mysql-connector-java-5.1.29-bin.jar"
+default['hopsworks']['mysql_connector_url']         = "#{node['download_url']}/mysql-connector-java-8.0.21-bin.jar"
 
 default['hopsworks']['cert']['cn']                  = "logicalclocks.com"
 default['hopsworks']['cert']['o']                   = "Logical Clocks AB"
@@ -275,7 +280,7 @@ default['hopsworks']['hive2']['scratch_dir_cleaner_interval']     = "24h"
 # Database upgrades
 #
 # "https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.0.3/flyway-commandline-5.0.3-linux-x64.tar.gz"
-default['hopsworks']['flyway']['version']              = "5.0.3"
+default['hopsworks']['flyway']['version']              = "6.5.1"
 default['hopsworks']['flyway_url']                     = node['download_url'] + "/flyway-commandline-#{node['hopsworks']['flyway']['version']}-linux-x64.tar.gz"
 
 

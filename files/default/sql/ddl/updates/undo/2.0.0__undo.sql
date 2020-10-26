@@ -39,3 +39,5 @@ ALTER TABLE `hopsworks`.`feature_store_feature` ADD COLUMN `training_dataset_id`
 ALTER TABLE `hopsworks`.`training_dataset` DROP COLUMN `query`;
 
 DROP TABLE IF EXISTS `hopsworks`.`cloud_role_mapping`; 
+
+DROP TABLE IF EXISTS `hopsworks`.`cloud_role_mapping_default`;

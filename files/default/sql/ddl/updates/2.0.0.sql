@@ -85,6 +85,8 @@ ALTER TABLE `hopsworks`.`on_demand_feature` DROP COLUMN `training_dataset_id`;
 
 ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `query` TINYINT(1) NOT NULL DEFAULT '0';
 
+ALTER TABLE `hopsworks`.`python_dep` DROP COLUMN `base_env`;
+
 /*
 The following changes are related to Migration to NDB8
 The following changes are implemented using procedures 

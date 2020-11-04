@@ -51,3 +51,9 @@ ALTER TABLE `hopsworks`.`python_dep` ADD COLUMN `base_env` VARCHAR(45) COLLATE l
 DROP TABLE IF EXISTS `hopsworks`.`cloud_role_mapping`; 
 
 DROP TABLE IF EXISTS `hopsworks`.`cloud_role_mapping_default`;
+
+ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN `git_api_key_name`;
+
+ALTER TABLE `hopsworks`.`conda_commands` DROP COLUMN `git_backend`;
+
+ALTER TABLE `hopsworks`.`conda_commands` CHANGE `error_message` `error_message` VARCHAR(11000) COLLATE latin1_general_cs DEFAULT NULL;

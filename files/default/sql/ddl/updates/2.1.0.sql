@@ -264,6 +264,7 @@ SET `col`.`statistics_config_id` =  `sc`.`id`;
 SET SQL_SAFE_UPDATES = 1;
 
 ALTER TABLE `hopsworks`.`statistic_columns` DROP COLUMN `feature_group_id`;
+
 ALTER TABLE `hopsworks`.`oauth_login_state` CHANGE COLUMN `token` `token` VARCHAR(8000) COLLATE latin1_general_cs DEFAULT NULL;
 
 ALTER TABLE `hopsworks`.`oauth_client` 
@@ -277,3 +278,6 @@ ADD COLUMN `code_challenge` varchar(128) DEFAULT NULL,
 ADD COLUMN `session_id` VARCHAR(128) NOT NULL,
 ADD COLUMN `redirect_uri` VARCHAR(1024) NOT NULL,
 ADD COLUMN `scopes` VARCHAR(2048) NOT NULL;
+
+ALTER TABLE `hopsworks`.`feature_store_tag` DROP COLUMN `type`;
+ALTER TABLE `hopsworks`.`feature_store_tag` ADD COLUMN `tag_schema` VARCHAR(13000) NOT NULL DEFAULT '{"type":"string"}';

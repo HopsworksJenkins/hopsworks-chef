@@ -112,3 +112,6 @@ ALTER TABLE `on_demand_feature_group`
 
 DROP TABLE `feature_store_connector`;
 DROP TABLE `on_demand_option`;
+
+ALTER TABLE `hopsworks`.`feature_store_tag` ADD COLUMN `type` varchar(45) NOT NULL DEFAULT 'STRING';
+ALTER TABLE `hopsworks`.`feature_store_tag` DROP COLUMN `tag_schema`;

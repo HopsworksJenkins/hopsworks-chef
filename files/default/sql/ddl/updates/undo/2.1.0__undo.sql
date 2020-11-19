@@ -161,3 +161,5 @@ SET SQL_SAFE_UPDATES = 1;
 ALTER TABLE `hopsworks`.`statistic_columns` DROP COLUMN `statistics_config_id`;
 
 DROP TABLE `hopsworks`.`statistics_config`;
+ALTER TABLE `hopsworks`.`feature_store_tag` ADD COLUMN `type` varchar(45) NOT NULL DEFAULT 'STRING';
+ALTER TABLE `hopsworks`.`feature_store_tag` DROP COLUMN `tag_schema`;

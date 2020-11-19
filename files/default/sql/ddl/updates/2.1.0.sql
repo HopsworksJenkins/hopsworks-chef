@@ -249,3 +249,5 @@ SET `col`.`statistics_config_id` =  `sc`.`id`;
 SET SQL_SAFE_UPDATES = 1;
 
 ALTER TABLE `hopsworks`.`statistic_columns` DROP COLUMN `feature_group_id`;
+ALTER TABLE `hopsworks`.`feature_store_tag` DROP COLUMN `type`;
+ALTER TABLE `hopsworks`.`feature_store_tag` ADD COLUMN `tag_schema` VARCHAR(13000) NOT NULL DEFAULT '{"type":"string"}';

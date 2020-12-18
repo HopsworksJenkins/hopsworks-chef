@@ -135,3 +135,5 @@ CREATE TABLE `cached_feature_extra_constraints` (
   KEY `cached_feature_group_fk` (`cached_feature_group_id`),
   CONSTRAINT `cached_feature_group_fk1` FOREIGN KEY (`cached_feature_group_id`) REFERENCES `cached_feature_group` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+
+ALTER TABLE `hopsworks`.`serving` ADD COLUMN `serving_mode` INT(11) NOT NULL DEFAULT '0';

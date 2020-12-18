@@ -148,3 +148,5 @@ CREATE TABLE `on_demand_option` (
   KEY `on_demand_option_key` (`on_demand_feature_group_id`),
   CONSTRAINT `on_demand_option_fk` FOREIGN KEY (`on_demand_feature_group_id`) REFERENCES `on_demand_feature_group` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+
+ALTER TABLE `hopsworks`.`serving` ADD COLUMN `serving_mode` INT(11) NOT NULL DEFAULT '0';

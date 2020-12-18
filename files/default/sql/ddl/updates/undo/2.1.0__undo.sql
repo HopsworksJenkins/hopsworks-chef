@@ -112,3 +112,5 @@ ALTER TABLE `on_demand_feature_group`
 
 DROP TABLE `feature_store_connector`;
 DROP TABLE `on_demand_option`;
+
+ALTER TABLE `hopsworks`.`serving` DROP COLUMN `serving_mode`;

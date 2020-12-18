@@ -1368,6 +1368,7 @@ CREATE TABLE `serving` (
   `lock_timestamp` bigint(20) DEFAULT NULL,
   `kafka_topic_id` int(11) DEFAULT NULL,
   `serving_type` int(11) NOT NULL DEFAULT '0',
+  `serving_mode` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `Serving_Constraint` (`project_id`,`name`),
   KEY `user_fk` (`creator`),

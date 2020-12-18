@@ -106,3 +106,5 @@ ALTER TABLE `hopsfs_training_dataset` DROP FOREIGN KEY `hopsfs_td_conn_fk`,
     DROP COLUMN `connector_id`;
 
 DROP TABLE `feature_store_connector`;
+
+ALTER TABLE `hopsworks`.`serving` DROP COLUMN `serving_mode`;

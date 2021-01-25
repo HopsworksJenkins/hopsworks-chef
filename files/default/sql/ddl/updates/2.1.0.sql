@@ -277,3 +277,10 @@ ADD COLUMN `code_challenge` varchar(128) DEFAULT NULL,
 ADD COLUMN `session_id` VARCHAR(128) NOT NULL,
 ADD COLUMN `redirect_uri` VARCHAR(1024) NOT NULL,
 ADD COLUMN `scopes` VARCHAR(2048) NOT NULL;
+
+alter table python_dep add column repo_url varchar(255);
+update python_dep p set repo_url=(select url from anaconda_repo where id = p.repo_id);
+alter table python_dep drop foreign key FK_501_510;
+alter table python_dep drop index dependency;
+alter table python_dep drop column repo_id;
+alter table python_dep add constraint dependency unique (`dependency`, version, install_type, repo);

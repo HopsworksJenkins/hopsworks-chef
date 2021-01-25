@@ -1221,7 +1221,7 @@ CREATE TABLE `python_dep` (
   `preinstalled` tinyint(1) DEFAULT '0',
   `install_type` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `dependency` (`dependency`,`version`,`install_type`,`repo_url`),
+  UNIQUE KEY `dependency` (`dependency`,`version`,`install_type`,`repo_url`)
 ) ENGINE=ndbcluster AUTO_INCREMENT=31 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

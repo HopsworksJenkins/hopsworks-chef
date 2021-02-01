@@ -61,3 +61,8 @@ ALTER TABLE `hopsworks`.`feature_group` DROP COLUMN `validation_type`;
 ALTER TABLE `hopsworks`.`oauth_client` 
 DROP COLUMN `end_session_endpoint`,
 DROP COLUMN `logout_redirect_param`;
+ALTER TABLE `hopsworks`.`feature_store_connector` 
+DROP FOREIGN KEY `fs_connector_snowflake_fk`,
+DROP COLUMN `snowflake_id`;
+
+DROP TABLE IF EXISTS `hopsworks`.`feature_store_snowflake_connector`;

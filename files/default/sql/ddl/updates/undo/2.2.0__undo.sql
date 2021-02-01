@@ -52,3 +52,6 @@ ALTER TABLE `users`
 
 ALTER TABLE `hopsworks`.`feature_store_tag` ADD COLUMN `type` varchar(45) NOT NULL DEFAULT 'STRING';
 ALTER TABLE `hopsworks`.`feature_store_tag` DROP COLUMN `tag_schema`;
+
+ALTER TABLE `hopsworks`.`serving` DROP COLUMN `serving_tool`;
+ALTER TABLE `hopsworks`.`serving` RENAME COLUMN `model_server` TO `serving_type`;

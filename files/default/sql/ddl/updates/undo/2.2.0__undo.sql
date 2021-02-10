@@ -63,6 +63,6 @@ DROP COLUMN `end_session_endpoint`,
 DROP COLUMN `logout_redirect_param`;
 
 
-ALTER TABLE `hopsworks`.`feature_store_statistic` MODIFY `commit_time` VARCHAR(20) NOT NULL,
+ALTER TABLE `hopsworks`.`feature_store_statistic` MODIFY `commit_time` VARCHAR(30) NOT NULL,
     DROP COLUMN `feature_group_commit_id`,
     DROP FOREIGN KEY `fg_ci_fk_fss`;

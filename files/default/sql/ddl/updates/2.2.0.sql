@@ -64,6 +64,11 @@ CREATE TABLE  IF NOT EXISTS `feature_group_validation` (
 
 ALTER TABLE `hopsworks`.`feature_group` ADD COLUMN `validation_type` INT(11) DEFAULT '4' AFTER `corr_method`;
 ALTER TABLE `hopsworks`.`feature_group_commit` ADD COLUMN `validation_id` int(11), ADD CONSTRAINT `fgc_fk_fgv` FOREIGN KEY (`validation_id`) REFERENCES `feature_group_validation` (`id`) ON DELETE SET NULL  ON UPDATE NO ACTION;
-ALTER TABLE `hopsworks`.`oauth_client` 
+ALTER TABLE `hopsworks`.`oauth_client`
 ADD COLUMN `end_session_endpoint` VARCHAR(1024) DEFAULT NULL,
 ADD COLUMN `logout_redirect_param` VARCHAR(45) DEFAULT NULL;
+
+
+ALTER TABLE `hopsworks`.`feature_store_statistic` MODIFY `commit_time` DATETIME(3)  NOT NULL,
+    ADD COLUMN `feature_group_commit_id` BIGINT(20),
+    ADD CONSTRAINT `fg_ci_fk_fss` FOREIGN KEY (`feature_group_id`, `feature_group_commit_id`) REFERENCES `feature_group_commit` (`feature_group_id`, `commit_id`) ON DELETE CASCADE ON UPDATE NO ACTION;

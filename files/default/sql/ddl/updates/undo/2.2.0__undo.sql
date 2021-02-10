@@ -58,6 +58,11 @@ DROP TABLE IF EXISTS `feature_group_validation`;
 DROP TABLE IF EXISTS `feature_store_expectation_rule`;
 ALTER TABLE `hopsworks`.`feature_group` DROP COLUMN `validation_type`;
 
-ALTER TABLE `hopsworks`.`oauth_client` 
+ALTER TABLE `hopsworks`.`oauth_client`
 DROP COLUMN `end_session_endpoint`,
 DROP COLUMN `logout_redirect_param`;
+
+
+ALTER TABLE `hopsworks`.`feature_store_statistic` MODIFY `commit_time` VARCHAR(20) NOT NULL,
+    DROP COLUMN `feature_group_commit_id`,
+    DROP FOREIGN KEY `fg_ci_fk_fss`;

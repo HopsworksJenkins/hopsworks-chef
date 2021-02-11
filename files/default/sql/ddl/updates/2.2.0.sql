@@ -68,7 +68,6 @@ ALTER TABLE `hopsworks`.`oauth_client`
 ADD COLUMN `end_session_endpoint` VARCHAR(1024) DEFAULT NULL,
 ADD COLUMN `logout_redirect_param` VARCHAR(45) DEFAULT NULL;
 CREATE TABLE IF NOT EXISTS `hopsworks`.`feature_store_snowflake_connector` (
-CREATE TABLE IF NOT EXISTS `feature_store_snowflake_connector` (
   `id`                       INT(11)       NOT NULL AUTO_INCREMENT,
   `url`                      VARCHAR(3000) NOT NULL,
   `database_user`            VARCHAR(128)  NOT NULL,

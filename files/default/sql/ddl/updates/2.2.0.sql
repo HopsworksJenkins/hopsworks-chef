@@ -90,4 +90,4 @@ CREATE TABLE `feature_store_activity` (
   CONSTRAINT `fs_act_commit_fk` FOREIGN KEY (`feature_group_id`, `commit_id`) REFERENCES `feature_group_commit` (`feature_group_id`, `commit_id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
-
+ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `coalesce` TINYINT(1) DEFAULT '0';

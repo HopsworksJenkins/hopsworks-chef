@@ -95,3 +95,16 @@ ALTER TABLE `hopsworks`.`feature_store_statistic` MODIFY `commit_time` DATETIME(
     ADD CONSTRAINT `fg_ci_fk_fss` FOREIGN KEY (`feature_group_id`, `feature_group_commit_id`) REFERENCES `feature_group_commit` (`feature_group_id`, `commit_id`) ON DELETE SET NULL ON UPDATE NO ACTION;
 
 ALTER TABLE `hopsworks`.`training_dataset` ADD COLUMN `coalesce` TINYINT(1) NOT NULL DEFAULT '0';
+
+# drop meta designer
+DROP TABLE IF EXISTS `meta_data`;
+DROP TABLE IF EXISTS `meta_field_types`;
+DROP TABLE IF EXISTS `meta_fields`;
+DROP TABLE IF EXISTS `meta_tables`;
+DROP TABLE IF EXISTS `meta_templates`;
+DROP TABLE IF EXISTS `meta_template_to_inode`;
+DROP TABLE IF EXISTS `meta_raw_data`;
+DROP TABLE IF EXISTS `meta_field_predefined_values`;
+DROP TABLE IF EXISTS `meta_inode_basic_metadata`;
+DROP TABLE IF EXISTS `meta_tuple_to_file`;
+DROP TABLE IF EXISTS `meta_log`;

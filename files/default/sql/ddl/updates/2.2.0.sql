@@ -124,3 +124,16 @@ CREATE TABLE IF NOT EXISTS `hopsworks`.`feature_store_snowflake_connector` (
 ALTER TABLE `hopsworks`.`feature_store_connector`
   ADD COLUMN `snowflake_id` INT(11) after `adls_id`,
   ADD CONSTRAINT `fs_connector_snowflake_fk` FOREIGN KEY (`snowflake_id`) REFERENCES `hopsworks`.`feature_store_snowflake_connector` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+# drop meta designer
+DROP TABLE IF EXISTS `meta_data`;
+DROP TABLE IF EXISTS `meta_field_predefined_values`;
+DROP TABLE IF EXISTS `meta_raw_data`;
+DROP TABLE IF EXISTS `meta_fields`;
+DROP TABLE IF EXISTS `meta_field_types`;
+DROP TABLE IF EXISTS `meta_tables`;
+DROP TABLE IF EXISTS `meta_template_to_inode`;
+DROP TABLE IF EXISTS `meta_templates`;
+DROP TABLE IF EXISTS `meta_inode_basic_metadata`;
+DROP TABLE IF EXISTS `meta_tuple_to_file`;
+DROP TABLE IF EXISTS `meta_log`;

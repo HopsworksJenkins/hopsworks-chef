@@ -35,3 +35,6 @@ REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("fs_job_activity_tim
 
 REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("pypi_indexer_timer_interval", "<%= node['hopsworks']['pypi_indexer_timer_interval'] %>");
 REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("pypi_simple_endpoint", "<%= node['hopsworks']['pypi_simple_endpoint'] %>");
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("docker_job_mounts_list", "<%= node['hopsworks']['docker-job']['docker_job_mounts_list'] %>");
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("docker_job_mounts_allowed", "<%= node['hopsworks']['docker-job']['docker_job_mounts_allowed'] %>");
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("docker_job_uid_strict", "<%= node['hopsworks']['docker-job']['docker_job_uid_strict'] %>");

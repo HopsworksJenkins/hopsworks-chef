@@ -452,3 +452,8 @@ default['hopsworks']['hdfs']['storage_policy']['log']         = "HOT"
 default["hopsworks"]['check_nodemanager_status']              = "false"
 
 default['hopsworks']['azure-ca-cert']['download-url']         = "https://cacerts.digicert.com/DigiCertGlobalRootG2.crt"
+
+# Docker job
+default['hopsworks']['docker-job']['docker_job_mounts_list']    = ""
+default['hopsworks']['docker-job']['docker_job_mounts_allowed'] = "false"
+default['hopsworks']['docker-job']['docker_job_uid_strict'] = "true"

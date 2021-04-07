@@ -42,3 +42,5 @@ INSERT INTO `hopsworks`.`users`
 ON DUPLICATE KEY UPDATE `username`="onlinefs";
 
 INSERT IGNORE INTO `hopsworks`.`user_group` (`uid`, `gid`) SELECT `uid`, 1007 FROM `hopsworks`.`users` WHERE `username`='<%= node['onlinefs']['user'] %>';
+
+REPLACE INTO `hopsworks`.`variables`(`id`, `value`) VALUES ("livy_startup_timeout", "<%= node['hopsworks']['livy_startup_timeout'] %>");

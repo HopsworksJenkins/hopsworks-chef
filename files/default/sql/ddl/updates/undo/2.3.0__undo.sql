@@ -1,0 +1,1 @@
+ALTER TABLE `hopsworks`.`serving` DROP COLUMN `deployed`;

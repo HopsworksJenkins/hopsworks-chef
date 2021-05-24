@@ -54,3 +54,5 @@ CREATE TABLE `project_service_alert` (
   KEY `fk_project_service_2_idx` (`project_id`),
   CONSTRAINT `fk_project_service_alert_2` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE
 ) ENGINE=ndbcluster DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+
+ALTER TABLE `hopsworks`.`serving` ADD COLUMN `docker_config` varchar(1000) COLLATE latin1_general_cs DEFAULT NULL;

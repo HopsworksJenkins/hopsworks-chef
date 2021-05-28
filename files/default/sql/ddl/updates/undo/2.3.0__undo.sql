@@ -5,3 +5,5 @@ DROP TABLE IF EXISTS `alert_manager_config`;
 DROP TABLE IF EXISTS `job_alert`;
 DROP TABLE IF EXISTS `feature_group_alert`;
 DROP TABLE IF EXISTS `project_service_alert`;
+
+ALTER TABLE `hopsworks`.`serving` DROP COLUMN `docker_config`;
